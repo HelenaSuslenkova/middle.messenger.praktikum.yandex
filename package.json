@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel index.html --no-cache",
-    "server": "node ./server.js",
+    "start": "parcel build index.html && node ./server.js",
     "build": "parcel build index.html"
   },
   "keywords": [],
