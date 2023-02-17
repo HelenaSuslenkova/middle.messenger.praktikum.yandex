@@ -107,22 +107,11 @@
             time="12:30"
           }}
         </div>
-        <div class="chat-wrapper">
-          {{> divider}}
-          {{> chat
-            alt="Default avatar"
-            name="Helena"
-            sender="You: "
-            message="test message"
-            time="12:30"
-            count="30"
-          }}
-        </div>
       </div>
     </div>
   </div>
   <div class="main-column-chat" >
-    <div class="page-content">
+    <div class=" page-content-chat ">
       <div class="main-header-chat">
         {{> chat
           alt="Default avatar"
@@ -160,15 +149,16 @@
       </div>
       {{> divider}}
 
-      <div class="main-footer-chat"></div>
-        <form class=" chat-message-send">
-          {{> attachInput src=attachIcon}}
+      <div class="main-footer-chat">
+        <form class="chat-message-send">
+          {{> attachInput src=attachIcon inputId="attach"}}
           {{> messageInput
             placeholder="Message"
+            inputId="message"
           }}
           {{> arrow style="arrow-right" typeButton="submit"}}
         </form>
-
+      </div>
     </div>
   </div>
 </div>
