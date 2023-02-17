@@ -1,0 +1,174 @@
+<div class="two-columns-container">
+  <div class="lefted-column-chat blocks-align-center">
+    <div class="left-wrapper">
+      <div class="header-left-col right">
+        {{> link label="Profile >" style="regular500 smallerPlus grey2"}}
+      </div>
+      <div class="search-left-col">
+        {{> searchInput
+          wrapperStyle="smallerPlus regular500"
+          placeholder="Search"
+          inputId="search"
+        }}
+      </div>
+      <div class="chats-left-col">
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            message="Друзья, у меня для вас особенный выпуск новостей!...Друзья, у меня для вас особенный выпуск новостей!..."
+            time="12:30"
+            count="30"
+          }}
+        </div>
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            sender="Вы: "
+            message="..."
+            time="12:30"
+            count="30"
+          }}
+        </div>
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            sender="Вы: "
+            message="dsfsdfsf"
+            time="12:30"
+            count="30"
+          }}
+        </div>
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            sender="Вы: "
+            message="test message"
+            time="12:30"
+            count="30"
+          }}
+        </div>
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            sender="Вы: "
+            message="test message"
+            time="12:30"
+            count="30"
+          }}
+        </div>
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            sender="Вы: "
+            message="..."
+            time="12:30"
+            count="30"
+          }}
+        </div>
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            message="test message"
+            time="12:30"
+            count="30"
+          }}
+        </div>
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            sender="Вы: "
+            message="test message"
+            count="30"
+          }}
+        </div>
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            sender="Вы: "
+            message="test message"
+            time="12:30"
+          }}
+        </div>
+        <div class="chat-wrapper">
+          {{> divider}}
+          {{> chat
+            alt="Default avatar"
+            name="Helena"
+            sender="You: "
+            message="test message"
+            time="12:30"
+            count="30"
+          }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-column-chat" >
+    <div class="page-content">
+      <div class="main-header-chat">
+        {{> chat
+          alt="Default avatar"
+          name="Helena"
+          for-main="for-main"
+          styleName="chat-name-padding"
+        }}
+        {{> menuDots}}
+      </div>
+      {{> divider}}
+      <div class="main-chat-content-wrapper">
+        <div class="chat-messages-date">
+          {{> text
+            content="2023, july, 19"
+            style="regular500 smallerPlus  grey2"
+          }}
+        </div>
+        <div class="chat-messages">
+            {{> textMessage
+              content="Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
+Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро."
+              time="11:56"
+            }}
+            {{> imageMessage
+              src=defaultImageMessage
+              time="11:56"
+            }}
+            {{> textMessage
+              right="right"
+              content="Круто!"
+              time="11:57"
+              doubleCheck="doubleCheck"
+            }}
+        </div>
+      </div>
+      {{> divider}}
+
+      <div class="main-footer-chat"></div>
+        <form class=" chat-message-send">
+          {{> attachInput src=attachIcon}}
+          {{> messageInput
+            placeholder="Message"
+          }}
+          {{> arrow style="arrow-right" typeButton="submit"}}
+        </form>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+.avatar-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--grey1);
+  border: 2px solid var(--grey1);
+    /* &:hover {
+      background-color: rgba(0, 0, 0, .5);
+      & .block-hover {
+        display: flex;
+      }
+      .avatar {
+        display: none;
+      }
+    } */
+}
+.avatar-border:not(.not-hover) {
+  &:hover {
+    background-color: rgba(0, 0, 0, .5);
+    & .block-hover {
+      display: flex;
+    }
+    .avatar {
+      display: none;
+    }
+  }
+}
+
+.avatar {
+    object-fit: cover;
+    position: absolute;
+    top: 55px;
+    left: 55px;
+}
+
+.block-hover {
+  text-align: center;
+  display: none;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  align-items: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  /* width: 150px;
+  height: 150px; */
+  margin-bottom: 20px;
+    /* &:hover {
+      cursor: pointer;
+    } */
+}
+
+.avatar-wrapper:not(.not-hover) {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.hover-block {
+  display: none;
+}
+
+.avatar-wrapper.full-size {
+  width: 150px;
+  height: 150px;
+}
+
+.avatar-wrapper.chat-list-size {
+  width: 47px;
+  height: 47px;
+}
+
+.avatar-wrapper.chat-main-size {
+  width: 37px;
+  height: 37px;
+  margin: 0;
+}

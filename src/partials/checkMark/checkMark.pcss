@@ -1,0 +1,38 @@
+.check-mark {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.check-mark div::after {
+  content: "";
+  width: 7px;
+  height: 1px;
+  background-color: var(--blue2);
+  position: absolute;
+  top: 2px;
+  right: -1px;
+  transform: rotate(-45deg);
+}
+
+.check-mark div::before {
+  content: "";
+  width: 3.76px;
+  height: 1px;
+  background-color: var(--blue2);
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  transform: rotate(45deg);
+}
+
+.check-mark .double-check[visible]::after {
+  content: "";
+  width: 7px;
+  height: 1px;
+  background-color: var(--blue2);
+  position: absolute;
+  top: 2px;
+  right: -4px;
+  transform: rotate(-45deg);
+}
