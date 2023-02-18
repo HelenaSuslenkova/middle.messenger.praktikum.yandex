@@ -5,7 +5,9 @@
   <div class="main-column" >
       <div class="inner-container">
         <div class="page-content">
-          {{> avatar src=defaultImage alt="Helena" style="full-size"}}
+          <form>
+            {{> avatar src=defaultImage alt="Helena" style="full-size" submit=true}}
+          </form>
           {{> text content="Helena" style="regular600 text-default"}}
           <form class="form">
             <div class="list-items">
@@ -19,19 +21,19 @@
               </div>
               <div class="item">
                 <div class="itemKey">{{> text content="Name" style="regular500 small"}}</div>
-                {{> textInput type="text" simple="simple" inputId="name" alertMessage="Invalid name" value="Ivan" inputStyle="regular500 small grey2"}}
+                {{> textInput type="text" simple="simple" inputId="first_name" alertMessage="Invalid name" value="Ivan" inputStyle="regular500 small grey2"}}
               </div>
               <div class="item">
                 <div class="itemKey">{{> text content="Surname" style="regular500 small"}}</div>
-                {{> textInput type="text" simple="simple" inputId="surname" alertMessage="Invalid surname" value="Ivanov" inputStyle="regular500 small grey2"}}
+                {{> textInput type="text" simple="simple" inputId="second_name" alertMessage="Invalid surname" value="Ivanov" inputStyle="regular500 small grey2"}}
               </div>
               <div class="item">
                 <div class="itemKey">{{> text content="Chat name" style="regular500 small"}}</div>
-                {{> textInput type="text" simple="simple" inputId="chat-name" alertMessage="Invalid chat name" value="Ivan" inputStyle="regular500 small grey2"}}
+                {{> textInput type="text" simple="simple" inputId="display_name" alertMessage="Invalid chat name" value="Ivan" inputStyle="regular500 small grey2"}}
               </div>
               <div class="item">
                 <div class="itemKey">{{> text content="Telephone" style="regular500 small"}}</div>
-                {{> textInput type="tel" simple="simple" inputId="tel" alertMessage="Invalid telephone" value="+7 (909) 967 30 30" inputStyle="regular500 small grey2"}}
+                {{> textInput type="tel" simple="simple" inputId="phone" alertMessage="Invalid telephone" value="+7 (909) 967 30 30" inputStyle="regular500 small grey2"}}
               </div>
             </div>
             <div class="form-actions-wrapper">

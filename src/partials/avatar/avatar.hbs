@@ -1,7 +1,11 @@
 <div class="avatar-wrapper {{style}}">
   <div class="avatar-border {{style}}">
     {{#if src}}
-      <img class="avatar" src={{src}} alt={{alt}} />
+      {{#if submit}}
+        <input class="avatar" type="image" src={{src}} alt={{alt}} name="avatar" >
+      {{else}}
+        <img class="avatar" src={{src}} alt={{alt}} />
+      {{/if}}
     {{/if}}
     <div class="block-hover">
       {{> text content="Change avatar" style="regular500 small white"}}

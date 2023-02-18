@@ -5,7 +5,9 @@
   <div class="main-column" >
       <div class="inner-container">
         <div class="page-content">
-          {{> avatar src=defaultImage alt="Helena" style="full-size"}}
+          <form>
+            {{> avatar src=defaultImage alt="Helena" style="full-size" submit=true}}
+          </form>
           {{> text content="Helena" style="regular600 text-default"}}
           <div class="list-items">
             <div class="item">
