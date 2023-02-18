@@ -1,0 +1,53 @@
+<div class="two-columns-container">
+  <div class="lefted-column blocks-align-center">
+      {{> arrow style="arrow-left"}}
+  </div>
+  <div class="main-column" >
+      <div class="inner-container">
+        <div class="page-content">
+          <form>
+            {{> avatar src=defaultImage alt="Helena" style="full-size" submit=true}}
+          </form>
+          {{> text content="Helena" style="regular600 text-default"}}
+          <div class="list-items">
+            <div class="item">
+              <div class="itemKey">{{> text content="Email" style="regular500 small"}}</div>
+              <div class="itemValue">{{> text content="pochta@yandex.ru" style="regular500 small grey2"}}</div>
+            </div>
+            <div class="item">
+              <div class="itemKey">{{> text content="Login" style="regular500 small"}}</div>
+              <div class="itemValue">{{> text content="ivanivanov" style="regular500 small grey2"}}</div>
+            </div>
+            <div class="item">
+              <div class="itemKey">{{> text content="Name" style="regular500 small"}}</div>
+              <div class="itemValue">{{> text content="Иван" style="regular500 small grey2"}}</div>
+            </div>
+            <div class="item">
+              <div class="itemKey">{{> text content="Surname" style="regular500 small"}}</div>
+              <div class="itemValue">{{> text content="Иванов" style="regular500 small grey2"}}</div>
+            </div>
+            <div class="item">
+              <div class="itemKey">{{> text content="Chat name" style="regular500 small"}}</div>
+              <div class="itemValue">{{> text content="Иван" style="regular500 small grey2"}}</div>
+            </div>
+            <div class="item">
+              <div class="itemKey">{{> text content="Telephone" style="regular500 small"}}</div>
+              <div class="itemValue">{{> text content="+7 (909) 967 30 30" style="regular500 small grey2"}}</div>
+            </div>
+          </div>
+
+          <div class="list-items">
+            <div class="item">
+              <div class="itemKey">{{> link label="Change personal data" style="regular500 small"}}</div>
+            </div>
+            <div class="item">
+              <div class="itemKey">{{> link label="Change password" style="regular500 small"}}</div>
+            </div>
+            <div class="item">
+              <div class="itemKey">{{> link label="Logout" style="alert-link regular500 small"}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

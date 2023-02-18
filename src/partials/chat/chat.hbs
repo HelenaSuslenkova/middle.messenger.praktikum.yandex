@@ -1,0 +1,17 @@
+<div {{for-main}} class="chat {{styleChatWrapper}}">
+  {{#if for-main}}
+    {{> avatar style="not-hover chat-main-size"}}
+  {{else}}
+    {{> avatar style="not-hover chat-list-size"}}
+   {{/if}}
+  <div class="chat-short-decs">
+    <div class="chat-name small regular600 {{styleName}}">{{name}}</div>
+    {{#if message}}<div class="chat-last-message regular500 grey2 small1215 ">{{#if sender}}<span class="sender regular500 small1215">{{sender}}</span>{{/if}}{{message}}</div>{{/if}}
+  </div>
+  <div class="chat-info right">
+    <div class="chat-message-time regular500 grey2">{{time}}</div>
+    {{#if count}}
+      <div class="chat-unread-count white smaller">{{count}}</div>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.text-message {
+  max-width: 50%;
+  min-width: 120px;
+  padding: 11px;
+  margin: 11px 0;
+}
+
+.text-message >.info-block {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.text-message:not([right]) {
+  background-color: var(--grey35);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  margin-right: auto;
+}
+
+.text-message[right] {
+  background-color: var(--blue15);
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  margin-left: auto;
+}
+
+.text-message > .text-block {
+  width: 95%;
+}
+
+.message-time {
+  margin-left: 6px;
+}
+
+.message-time[doubleCheck] {
+  color: var(--blue2);
+}

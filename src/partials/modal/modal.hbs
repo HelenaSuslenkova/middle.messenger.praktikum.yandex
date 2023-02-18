@@ -1,0 +1,80 @@
+<div class="modal-overlay">
+  <div class="modal {{styleModal}}">
+    <div class="modal-content">
+      {{#if title}}
+        <div class="modal-title-wrapper {{styleTitleBlock}}">
+          {{#if isValid}}
+            <span class="modal-title regular500 center {{styleTitle}}">{{title}}</span>
+          {{else}}
+            {{> text content="Error, please try again" style="modal-title regular500 center red1"}}
+          {{/if}}
+        </div>
+      {{/if}}
+
+      {{#if uploadFileForm}}
+        <form class="modal-form">
+          <div class="input-control modal-content-input {{styleInputBlock}}">
+
+            {{#if isChoose}}
+              <div class="modal-list-selected-files">
+                {{> text content="pic.jpg" style="modal-selected-file regular500 grey25"}}
+              </div>
+            {{else}}
+                <label class="modal-input-file-wrapper">
+                <input
+                  class="input input-file modal-input-file {{inputStyle}}"
+                  value="{{value}}"
+                  type="file"
+                  id={{inputId}}
+                  name={{inputId}}
+                />
+                {{> text content="Select file on computer" style="modal-input-file-label link regular500 underline"}}
+              </label>
+            {{/if}}
+          </div>
+          <div class="modal-button {{styleButton}}">
+            <button type="submit" class="btn">{{submitLabel}}</button>
+          </div>
+          {{#if alertMessage}}
+            <div class="modal-message-alert regular500 smaller red1">{{alertMessage}}</div>
+          {{/if}}
+        </form>
+      {{/if}}
+{{!--  --}}
+
+      {{#if usersForm}}
+        <form class="modal-form">
+          <div class="input-control modal-content-input {{styleInputBlock}}">
+            <input
+              class="input text-input"
+              required=""
+              value="{{value}}"
+              type='text'
+              id="login"
+              name="login"
+              autofocus
+            />
+            <label
+              for="login"
+              class="input-label"
+              placeholder="Login"
+              alt="Login"
+            ></label>
+            {{#if alertMessage}}
+              <div class="message-alert most-small red1 {{isVisible}}">{{alertMessage}}</div>
+            {{/if}}
+          </div>
+          <div class="modal-button {{styleButton}}">
+            <button type="submit" class="btn">{{submitLabel}}</button>
+          </div>
+        </form>
+      {{/if}}
+
+      {{!-- {{#if bottomTextLink}}
+        <div class="link modal-bottom-link regular500 smaller red1 {{styleBottomLink}}">
+        {{ bottomTextLink }}
+        </div>
+      {{/if}} --}}
+    </div>
+  </div>
+</div>

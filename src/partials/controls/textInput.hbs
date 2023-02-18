@@ -1,0 +1,20 @@
+<div {{simple}} class="input-control {{wrapperStyle}}">
+  <input
+    class="input text-input {{inputStyle}}"
+    required=""
+    {{simple}}
+    value="{{value}}"
+    type={{type}}
+    id={{inputId}}
+    name={{inputId}}
+    {{autofocus}}
+  />
+  <label
+    {{simple}}
+    for={{inputId}}
+    class="input-label"
+    placeholder={{placeholder}}
+    alt={{alt}}
+  ></label>
+  <div {{simple}} class="message-alert most-small red1 {{isVisible}} {{alertStyle}}">{{alertMessage}}</div>
+</div>
