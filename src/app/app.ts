@@ -1,10 +1,9 @@
 
 import appTemplate from './app.hbs';
 import '../../styles.pcss';
-import './partials.js';
-import './routes.js';
-
+import './partials.ts';
+import './routes.ts';
 
 window.addEventListener('DOMContentLoaded', () => {
-  render(appTemplate)
+  window.render(appTemplate)
 });

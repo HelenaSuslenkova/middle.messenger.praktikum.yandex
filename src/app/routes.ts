@@ -16,6 +16,8 @@ import uploadFile4Modal from '../pages/modals/uploadFile_4.hbs';
 import userForm1Modal from '../pages/modals/userForm_1.hbs';
 import userForm2Modal from '../pages/modals/userForm_2.hbs';
 
+import { routesType, propsType, menuType } from './types';
+
 const defaultImage = new URL(
   '../asserts/images/default-image.png',
   import.meta.url
@@ -56,7 +58,7 @@ const locationIcon = new URL(
   import.meta.url
 );
 
-const menuProfile = [
+const menuProfile: menuType = [
   {
     icon: plusIcon,
     title: "Add user",
@@ -67,7 +69,7 @@ const menuProfile = [
   },
 ];
 
-const menuAttach = [
+const menuAttach: menuType= [
   {
     icon: photoIcon,
     title: "Photo or video",
@@ -82,9 +84,9 @@ const menuAttach = [
   },
 ];
 
-const ROOT_SELECTOR = 'app'
+const ROOT_SELECTOR: string = 'app'
 
-const ROUTES = {
+const ROUTES: routesType = {
   signin: signInPage,
   registration: registrationPage,
   page404: page404,
@@ -103,7 +105,7 @@ const ROUTES = {
   userForm2Modal: userForm2Modal,
 }
 
-const PROPS = {
+const PROPS: propsType = {
   signin: {},
   registration: {},
   page404: {},
@@ -135,13 +137,15 @@ const PROPS = {
   userForm2Modal: {},
 }
 
-window.goToPage = function(name, selector){
+window.goToPage = function(name: string, selector: string){
   const page = ROUTES[name];
   const props = PROPS[name];
-  render(page, props, selector);
+  window.render(page, props, selector);
 }
 
-window.render = function(html, props, selector = `#${ROOT_SELECTOR}`) {
-  const element = document.querySelector(selector);
-  element.innerHTML = html(props);
+window.render = function(html: any, props: propsType, selector: string = `#${ROOT_SELECTOR}`) {
+  const element: HTMLElement | null= document.querySelector(selector);
+  if(element) {
+    element.innerHTML = html(props) as string;
+  }
 }

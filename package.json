@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "parcel index.html --no-cache --open",
     "start": "parcel build index.html && node ./server.js",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "check": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
     "postcss-import": "^15.1.0"
   },
   "devDependencies": {
+    "@types/node": "^18.14.0",
     "buffer": "^5.5.0",
     "path-browserify": "^1.0.0",
     "postcss": "^8.0.0",
