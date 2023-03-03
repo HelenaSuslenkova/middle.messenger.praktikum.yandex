@@ -6,8 +6,14 @@
     "sourceMap": true,
     "strictNullChecks": true,
     "moduleResolution": "node",
-    "module": "esnext",
     "target": "esnext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types", "typings/app.d.ts"],
+    // "strict": true,
+    "baseUrl": "./src",
   },
-  "baseUrl": "./src",
+  "exclude": ["node_modules/**/*"]
 }

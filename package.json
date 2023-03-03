@@ -12,6 +12,15 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {},
+  "alias": {
+    "base": "./src/base",
+    "shared": "./src/shared",
+    "pages": "./src/pages",
+    "components": "./src/components",
+    "utils": "./src/utils",
+    "app": "./src/app",
+    "partials": "./src/partials"
+  },
   "dependencies": {
     "@anikin/parcel-transformer-handlebars": "^1.0.9",
     "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
