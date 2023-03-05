@@ -1,7 +1,8 @@
 import { Input } from "../Input";
-import template from "partials/controls/searchInput.hbs";
+import template from "partials/controls/messageInput.hbs";
 import { InputProps } from "shared";
-export class SearchInput extends Input {
+
+export class MessageInput extends Input {
   constructor(props: InputProps) {
     super(props);
   }

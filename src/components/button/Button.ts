@@ -1,14 +1,15 @@
 import { Component } from "base";
-import template from "partials/arrow/arrow.hbs";
+import template from "partials/button/button.hbs";
 import { ComponentProps } from "shared";
 
-type ArrowProps = {
-  typeButton: string;
+type ButtonProps = {
+  type: string;
+  label: string;
   style?: string;
 } & ComponentProps;
 
-export class Arrow extends Component {
-  constructor(props: ArrowProps) {
+export class Button extends Component {
+  constructor(props: ButtonProps) {
     super(props);
   }
   render() {
