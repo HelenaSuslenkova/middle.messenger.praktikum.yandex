@@ -1,0 +1,13 @@
+<div class="main-chat-content-wrapper">
+    <div class="chat-messages-date">
+      {{> text
+        content="2023, july, 19"
+        style="regular500 smallerPlus grey2"
+      }}
+    </div>
+    <div class="chat-messages">
+      {{#each messages}}
+          {{{this}}}
+      {{/each}}
+    </div>
+</div>

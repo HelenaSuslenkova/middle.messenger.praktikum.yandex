@@ -4,14 +4,14 @@ export type MenuType = {
   title: string;
 }[];
 
-export type PagePropsType = {
-  [key: string]: {
-    defaultImage?: URL,
-    defaultImageMessage?: URL,
-    attachIcon?: URL,
-    menuProfile?: MenuType,
-    menuAttach?: MenuType,
-  }
-};
+// export type PagePropsType = {
+//   [key: string]: {
+//     defaultImage?: URL,
+//     defaultImageMessage?: URL,
+//     attachIcon?: URL,
+//     menuProfile?: MenuType,
+//     menuAttach?: MenuType,
+//   }
+// };
 
 export const ROOT_SELECTOR: string = "app";

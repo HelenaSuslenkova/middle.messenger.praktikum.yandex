@@ -14,7 +14,7 @@ import textMessagePartial from '../partials/textMessage/textMessage.hbs';
 import imageMessagePartial from '../partials/imageMessage/imageMessage.hbs';
 import messageInputPartial from '../partials/controls/messageInput.hbs';
 import attachInputPartial from '../partials/controls/attachInput.hbs';
-import menuDotsPartial from '../partials/menuDots/menuDots.hbs';
+import dotsPartial from '../partials/dots/dots.hbs';
 import checkMarkPartial from '../partials/checkMark/checkMark.hbs';
 import menuPartial from '../partials/menu/menu.hbs';
 
@@ -32,6 +32,6 @@ Handlebars.registerPartial('textMessage', textMessagePartial);
 Handlebars.registerPartial('imageMessage', imageMessagePartial);
 Handlebars.registerPartial('messageInput', messageInputPartial);
 Handlebars.registerPartial('attachInput', attachInputPartial);
-Handlebars.registerPartial('menuDots', menuDotsPartial);
+Handlebars.registerPartial('dots', dotsPartial);
 Handlebars.registerPartial('checkMark', checkMarkPartial);
 Handlebars.registerPartial('menu', menuPartial);

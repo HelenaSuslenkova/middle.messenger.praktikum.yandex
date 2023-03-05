@@ -173,7 +173,7 @@ export default class Component {
             return;
           }
 
-          // component.getContent()?.append(...Array.from(stub.childNodes));
+          el.getContent()?.append(...Array.from(stub.childNodes));
 
           stub.replaceWith(el.getContent()!);
         });
@@ -184,7 +184,7 @@ export default class Component {
           return;
         }
 
-        // component.getContent()?.append(...Array.from(stub.childNodes));
+        component.getContent()?.append(...Array.from(stub.childNodes));
 
         stub.replaceWith(component.getContent()!);
       }

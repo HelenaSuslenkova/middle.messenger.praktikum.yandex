@@ -1,12 +1,14 @@
-<nav class="menu-wrapper">
-    {{#each menu}}
-      <div class="menu-item">
-        <div class="menu-icon">
-          <img class="menu-icon-file" src={{this.icon}} width="22px" height="22px">
+{{#if data}}
+  <nav class="menu-wrapper">
+      {{#each data}}
+        <div class="menu-item">
+          <div class="menu-icon">
+            <img class="menu-icon-file" src={{{this.icon}}} width="22px" height="22px">
+          </div>
+          <div class="menu-title">
+            <div>{{{this.title}}}</div>
+          </div>
         </div>
-        <div class="menu-title">
-          <div>{{this.title}}</div>
-        </div>
-      </div>
-    {{/each}}
-</nav>
+      {{/each}}
+  </nav>
+{{/if}}

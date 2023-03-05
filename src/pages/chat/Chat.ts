@@ -1,13 +1,11 @@
-import template from "./chat.hbs";
-import { defaultImageMessage, attachIcon } from "shared/resources";
 import { Component } from "base";
-
+import { Dialog } from "./components";
+import { ChatList } from "./components";
+import template from "./chat.hbs";
 export class Chat extends Component {
   init() {
-    this.props = {
-      defaultImageMessage,
-      attachIcon,
-    }
+    this.children.chatList = new ChatList();
+    this.children.dialog = new Dialog();
   }
 
   render() {
