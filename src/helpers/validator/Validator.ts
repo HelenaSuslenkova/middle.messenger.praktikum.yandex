@@ -59,6 +59,9 @@ export default class Validator {
   }
 
   static _validateData(data: Record<keyof typeof FormNames, string | File>) {
+    // TODO: must be removed
+    console.info(data);
+
     return Object.entries(data).map(([key, value]) => {
       if (key === FormNames.message) {
         const isValid = Validator._validationRules.message(value as string);
