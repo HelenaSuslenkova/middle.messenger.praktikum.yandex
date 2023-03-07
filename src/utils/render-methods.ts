@@ -1,6 +1,6 @@
 import { ROUTES } from "app/routing";
 import { ROOT_SELECTOR } from "shared";
-import { Component } from "utils";
+import { Component } from "base";
 
 export function render(
   component: Component,

@@ -20,7 +20,6 @@
     "utils": "./src/utils",
     "app": "./src/app",
     "partials": "./src/partials",
-    "controllers": "./src/controllers",
     "helpers": "./src/helpers"
   },
   "dependencies": {

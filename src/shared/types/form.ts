@@ -11,6 +11,7 @@ export type InputProps = {
   error?: string;
   alertStyle?: string;
   alertMessage?: string;
+  required?: string,
   handleFocus?: (event: Event) => void;
   handleBlur?: (event: Event) => void;
 } & ComponentProps;

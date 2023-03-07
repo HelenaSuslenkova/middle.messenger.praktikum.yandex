@@ -6,24 +6,48 @@ export default class Validator {
       return value !== "";
     },
     attach: function (value: string) {
-      return value !== "";
+      return Boolean(value);
+    },
+    second_name: function (value: string) {
+      return value.match(
+        /^[A-ZА-Я][a-zа-я]*(-[A-ZА-Я][a-zа-я]*)*$/
+      );
+    },
+    first_name: function (value: string) {
+      return value.match(
+        /^[A-ZА-Я][a-zа-я]*(-[A-ZА-Я][a-zа-я]*)*$/
+      );
+    },
+    login: function (value: string) {
+      return value.match(
+        /^(?!\d+$)[a-zA-Z0-9_-]{3,20}$/
+      );
     },
     phone: function (value: string) {
       return value.match(
-        /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+        /^\+?\d{10,15}$/
       );
     },
     email: function (value: string) {
       return value.match(
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        /^[a-zA-Z0-9_-]+@[a-zA-Z]+(\.[a-zA-Z]+)+$/
+      );
+    },
+    password: function (value: string) {
+      return value.match(
+        /^(?=.*[A-Z])(?=.*\d).{8,40}$/
       );
     },
   };
 
   static _validationMessages = {
     message: "This field is required",
-    phone: "The phone number isn't correct",
-    email: "The email isn't correct",
+    phone: "Invalid Phone number",
+    email: "Invalid Email",
+    login: "Invalid Login",
+    first_name: "Invalid First Name",
+    second_name: "Invalid Second Name",
+    password: "Password invalid",
     attach: "Not valid file",
   };
 
@@ -71,6 +95,38 @@ export default class Validator {
           [key]: value,
           error: !isValid && "error",
           alertMessage: !isValid && Validator._validationMessages.phone,
+        };
+      }
+      else if (key === FormNames.login) {
+        const isValid = Validator._validationRules.login(value as string);
+        return {
+          [key]: value,
+          error: !isValid && "error",
+          alertMessage: !isValid && Validator._validationMessages.login,
+        };
+      }
+      else if (key === FormNames.first_name) {
+        const isValid = Validator._validationRules.first_name(value as string);
+        return {
+          [key]: value,
+          error: !isValid && "error",
+          alertMessage: !isValid && Validator._validationMessages.first_name,
+        };
+      }
+      else if (key === FormNames.second_name) {
+        const isValid = Validator._validationRules.second_name(value as string);
+        return {
+          [key]: value,
+          error: !isValid && "error",
+          alertMessage: !isValid && Validator._validationMessages.second_name,
+        };
+      }
+      else if (key === FormNames.password) {
+        const isValid = Validator._validationRules.password(value as string);
+        return {
+          [key]: value,
+          error: !isValid && "error",
+          alertMessage: !isValid && Validator._validationMessages.password,
         };
       }
       else {

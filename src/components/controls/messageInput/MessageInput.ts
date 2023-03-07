@@ -4,6 +4,9 @@ import { InputProps } from "shared";
 import { BaseInput } from "components";
 import { Controller } from "base";
 
+const inputStyle = "message-input";
+const inputType = "text";
+
 export class MessageInput extends Input {
   constructor(props: InputProps) {
     super(props);
@@ -12,20 +15,16 @@ export class MessageInput extends Input {
   init() {
     (this.state = {
       input: {
-        value: "",
-        type: "text",
-        inputId: "message",
-        placeholder: "Message",
-        inputStyle: "message-input",
+        value: this.props.value,
+        type: inputType,
+        inputId: this.props.inputId,
+        placeholder: this.props.placeholder,
+        inputStyle: inputStyle,
       },
     }),
       (this.children = {
         input: new BaseInput({
-          value: "",
-          type: "text",
-          inputId: "message",
-          placeholder: "Message",
-          inputStyle: "message-input",
+          ...this.state.input,
           handleFocus: (_event: FocusEvent) => {},
           handleBlur: (event: FocusEvent) => {
             if (event.target) {
