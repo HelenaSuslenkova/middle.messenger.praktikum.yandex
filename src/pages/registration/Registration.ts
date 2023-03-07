@@ -1,11 +1,11 @@
 import { Component, Controller } from "base";
-import { Button, Form, TextInput } from "components";
+import { Button, Form, Link, TextInput } from "components";
 import { ComponentProps, FormNames } from "shared";
 import template from "./registration.hbs";
 
 const formClass = "form";
 const buttonClass = "submit-btn";
-
+const linkClass = "regular500 smaller";
 export class Registration extends Component {
   constructor(props: ComponentProps) {
     super(props);
@@ -79,8 +79,12 @@ export class Registration extends Component {
       type: "submit",
       label: "Registration",
       style: buttonClass,
-    })
+    });
 
+    this.children.link = new Link({
+      label: "Login",
+      style: linkClass,
+    });
     this.children.form = new Form({
       style: formClass,
       handleSubmit: (event: Event) => {
@@ -91,9 +95,7 @@ export class Registration extends Component {
 
         validationData!.forEach((input) => {
           if (input) {
-            if (
-              Object.keys(input).some((value) => value === FormNames.email)
-            ) {
+            if (Object.keys(input).some((value) => value === FormNames.email)) {
               this.setState({
                 ...this.state,
                 email: {
@@ -104,9 +106,7 @@ export class Registration extends Component {
               });
               this.props.emailInput.setProps(this.state.email);
             }
-            if (
-              Object.keys(input).some((value) => value === FormNames.login)
-            ) {
+            if (Object.keys(input).some((value) => value === FormNames.login)) {
               this.setState({
                 ...this.state,
                 login: {
@@ -144,7 +144,9 @@ export class Registration extends Component {
               this.props.firstNameInput.setProps(this.state.first_name);
             }
             if (
-              Object.keys(input).some((value) => value === FormNames.second_name)
+              Object.keys(input).some(
+                (value) => value === FormNames.second_name
+              )
             ) {
               this.setState({
                 ...this.state,
@@ -156,9 +158,7 @@ export class Registration extends Component {
               });
               this.props.secondNameInput.setProps(this.state.second_name);
             }
-            if (
-              Object.keys(input).some((value) => value === FormNames.phone)
-            ) {
+            if (Object.keys(input).some((value) => value === FormNames.phone)) {
               this.setState({
                 ...this.state,
                 phone: {

@@ -1,19 +1,12 @@
 <div class="container">
   <div class="inner-container">
     <div class="paper">
-      <form class="form">
-        <div class="form-title center">
-         {{> text content="Sign In" style="regular500 medium"}}
-        </div>
-        {{> textInput type="text" placeholder="Login" alt="Login" inputId="login" alertMessage="Invalid login"}}
-        {{> textInput type="password" placeholder="Password" alt="Password" inputId="password" alertMessage="Invalid password" error="error"}}
-
-        <div class="form-actions-wrapper">
-          {{> button type="submit" label="Submit" style="submit-btn"}}
-        </div>
-      </form>
+      <div class="form-title center">
+        {{> text content="Sign In" style="regular500 medium"}}
+      </div>
+      {{{form}}}
       <div class="links-wrapper">
-        {{> link label="Нет аккаунта?" style="regular500 smaller"}}
+        {{{link}}}
       </div>
     </div>
   </div>

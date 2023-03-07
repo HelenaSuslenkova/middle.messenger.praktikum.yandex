@@ -9,34 +9,22 @@ export default class Validator {
       return Boolean(value);
     },
     second_name: function (value: string) {
-      return value.match(
-        /^[A-ZА-Я][a-zа-я]*(-[A-ZА-Я][a-zа-я]*)*$/
-      );
+      return value.match(/^[A-ZА-Я][a-zа-я]*(-[A-ZА-Я][a-zа-я]*)*$/);
     },
     first_name: function (value: string) {
-      return value.match(
-        /^[A-ZА-Я][a-zа-я]*(-[A-ZА-Я][a-zа-я]*)*$/
-      );
+      return value.match(/^[A-ZА-Я][a-zа-я]*(-[A-ZА-Я][a-zа-я]*)*$/);
     },
     login: function (value: string) {
-      return value.match(
-        /^(?!\d+$)[a-zA-Z0-9_-]{3,20}$/
-      );
+      return value.match(/^(?!\d+$)[a-zA-Z0-9_-]{3,20}$/);
     },
     phone: function (value: string) {
-      return value.match(
-        /^\+?\d{10,15}$/
-      );
+      return value.match(/^\+?\d{10,15}$/);
     },
     email: function (value: string) {
-      return value.match(
-        /^[a-zA-Z0-9_-]+@[a-zA-Z]+(\.[a-zA-Z]+)+$/
-      );
+      return value.match(/^[a-zA-Z0-9_-]+@[a-zA-Z]+(\.[a-zA-Z]+)+$/);
     },
     password: function (value: string) {
-      return value.match(
-        /^(?=.*[A-Z])(?=.*\d).{8,40}$/
-      );
+      return value.match(/^(?=.*[A-Z])(?=.*\d).{8,40}$/);
     },
   };
 
@@ -51,19 +39,18 @@ export default class Validator {
     attach: "Not valid file",
   };
 
-  static validate(
-    data: FormData | { [x: string]: string}
-  ) {
+  static validate(data: FormData | { [x: string]: string }) {
     if (data instanceof FormData) {
       const preparedData = Validator._prepare(data);
       return Validator._validateData(preparedData);
     } else {
-      return Validator._validateData(data as Record<keyof typeof FormNames, string | File>);
+      return Validator._validateData(
+        data as Record<keyof typeof FormNames, string | File>
+      );
     }
   }
 
   static _validateData(data: Record<keyof typeof FormNames, string | File>) {
-
     return Object.entries(data).map(([key, value]) => {
       if (key === FormNames.message) {
         const isValid = Validator._validationRules.message(value as string);
@@ -72,64 +59,56 @@ export default class Validator {
           error: !isValid && "error",
           alertMessage: !isValid && Validator._validationMessages.message,
         };
-      }
-      else if (key === FormNames.attach) {
+      } else if (key === FormNames.attach) {
         const isValid = Validator._validationRules.attach(value as string);
         return {
           [key]: value,
           error: !isValid && "error",
           alertMessage: !isValid && Validator._validationMessages.attach,
         };
-      }
-      else if (key === FormNames.email) {
+      } else if (key === FormNames.email) {
         const isValid = Validator._validationRules.email(value as string);
         return {
           [key]: value,
           error: !isValid && "error",
           alertMessage: !isValid && Validator._validationMessages.email,
         };
-      }
-      else if (key === FormNames.phone) {
+      } else if (key === FormNames.phone) {
         const isValid = Validator._validationRules.phone(value as string);
         return {
           [key]: value,
           error: !isValid && "error",
           alertMessage: !isValid && Validator._validationMessages.phone,
         };
-      }
-      else if (key === FormNames.login) {
+      } else if (key === FormNames.login) {
         const isValid = Validator._validationRules.login(value as string);
         return {
           [key]: value,
           error: !isValid && "error",
           alertMessage: !isValid && Validator._validationMessages.login,
         };
-      }
-      else if (key === FormNames.first_name) {
+      } else if (key === FormNames.first_name) {
         const isValid = Validator._validationRules.first_name(value as string);
         return {
           [key]: value,
           error: !isValid && "error",
           alertMessage: !isValid && Validator._validationMessages.first_name,
         };
-      }
-      else if (key === FormNames.second_name) {
+      } else if (key === FormNames.second_name) {
         const isValid = Validator._validationRules.second_name(value as string);
         return {
           [key]: value,
           error: !isValid && "error",
           alertMessage: !isValid && Validator._validationMessages.second_name,
         };
-      }
-      else if (key === FormNames.password) {
+      } else if (key === FormNames.password) {
         const isValid = Validator._validationRules.password(value as string);
         return {
           [key]: value,
           error: !isValid && "error",
           alertMessage: !isValid && Validator._validationMessages.password,
         };
-      }
-      else {
+      } else {
         return {
           [key]: value,
           error: "",
