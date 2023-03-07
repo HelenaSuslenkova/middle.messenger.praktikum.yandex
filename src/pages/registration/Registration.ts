@@ -1,4 +1,5 @@
-import { Component, Controller } from "base";
+import { Component } from "base";
+import { Controller } from "controllers";
 import { Button, Form, Link, TextInput } from "components";
 import { ComponentProps, FormNames } from "shared";
 import template from "./registration.hbs";

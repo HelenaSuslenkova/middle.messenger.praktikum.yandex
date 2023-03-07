@@ -1,4 +1,5 @@
-import { Component, Controller } from "base";
+import { Component } from "base";
+import { Controller } from "controllers";
 import { Arrow, AttachInput, Form, MessageInput } from "components";
 import { attachIcon, ComponentProps, FormNames } from "shared";
 import template from "./dialogForm.hbs";

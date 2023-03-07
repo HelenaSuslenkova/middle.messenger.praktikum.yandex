@@ -1,4 +1,5 @@
-import { Component, Controller } from "base";
+import { Component } from "base";
+import { Controller } from "controllers";
 import { Avatar, Button, Form, ProfileForm, TextInput } from "components";
 import { ComponentProps, defaultImage, FormNames } from "shared";
 import template from "../profile/changeData.hbs";

@@ -1,4 +1,4 @@
-import { Controller } from "base";
+import { Controller } from "controllers";
 import { BaseInput } from "components";
 import template from "partials/controls/textInput.hbs";
 import { InputProps } from "shared";

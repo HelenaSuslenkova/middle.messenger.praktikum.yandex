@@ -2,7 +2,7 @@ import { Input } from "../Input";
 import template from "partials/controls/messageInput.hbs";
 import { InputProps } from "shared";
 import { BaseInput } from "components";
-import { Controller } from "base";
+import { Controller } from "controllers";
 
 const inputStyle = "message-input";
 const inputType = "text";

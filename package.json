@@ -20,7 +20,10 @@
     "utils": "./src/utils",
     "app": "./src/app",
     "partials": "./src/partials",
-    "helpers": "./src/helpers"
+    "helpers": "./src/helpers",
+    "services": "./src/services",
+    "controllers": "./src/controllers"
+
   },
   "dependencies": {
     "@anikin/parcel-transformer-handlebars": "^1.0.9",
