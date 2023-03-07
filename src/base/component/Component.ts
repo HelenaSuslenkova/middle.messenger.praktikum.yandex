@@ -1,6 +1,5 @@
 import EventBus from "../event-bus/EventBus";
 import { nanoid } from "nanoid";
-
 export default class Component {
   static EVENTS = {
     INIT: "init",
@@ -15,22 +14,29 @@ export default class Component {
   protected props: any;
   public id = nanoid(6);
   public children: Record<string, Component | Component[]>;
+  protected state: any = {};
 
   constructor(propsWithChildren: any = {}) {
     const eventBus = new EventBus();
 
     const { props, children } = this.getChildrenAndProps(propsWithChildren);
 
+    this.getStateFromProps(props)
     this._meta = { props };
 
     this.children = children;
     this.props = this.makePropsProxy(props);
+    this.state = this.makePropsProxy(this.state);
 
     this._eventBus = () => eventBus;
 
     this.registerEvents(eventBus);
 
     eventBus.emit(Component.EVENTS.INIT);
+  }
+
+  protected getStateFromProps(_props: Record<string, any>): void {
+    this.state = {};
   }
 
   private getChildrenAndProps(childrenAndProps: any) {
@@ -91,9 +97,9 @@ export default class Component {
       if (Array.isArray(child)) {
         child.map((el) => el.dispatchComponentDidMount());
       } else {
-        child.dispatchComponentDidMount()
+        child.dispatchComponentDidMount();
       }
-  });
+    });
   }
 
   private _componentDidUpdate(oldProps?: any, newProps?: any) {
@@ -188,7 +194,6 @@ export default class Component {
 
         stub.replaceWith(component.getContent()!);
       }
-
     });
 
     return temp.content;
@@ -200,6 +205,14 @@ export default class Component {
     }
 
     Object.assign(this.props, nextProps);
+  };
+
+  setState = (nextState: any) => {
+    if (!nextState) {
+      return;
+    }
+
+    Object.assign(this.state, nextState);
   };
 
   get element() {

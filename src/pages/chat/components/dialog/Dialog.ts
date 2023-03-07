@@ -1,12 +1,12 @@
 import { Component } from "base";
 import { attachIcon } from "shared";
-import { DialogHeader, MainContent, DialogFooter } from "./components";
+import { DialogHeader, MainContent, DialogForm } from "./components";
 import template from "./dialog.hbs";
 export class Dialog extends Component {
   init() {
     this.children.dialogHeader = new DialogHeader();
     this.children.mainContent = new MainContent();
-    this.children.dialogFooter = new DialogFooter({
+    this.children.dialogForm = new DialogForm({
       attachIcon,
     });
   }

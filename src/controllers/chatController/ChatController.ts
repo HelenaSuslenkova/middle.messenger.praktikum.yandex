@@ -1,9 +1,11 @@
-import { Controller } from "base/controller";
+// import { Controller } from "base/controller";
 
-export default class ChatController extends Controller {
+// export default class ChatController extends Controller {
+//   constructor() {
+//     super();
+//   }
 
-  static validateForm(data: FormData) {
-    super.validateForm(data);
-  }
-
-}
+//   validate(data: FormData) {
+//     console.info([...data.entries()]);
+//   }
+// }

@@ -19,7 +19,9 @@
     "components": "./src/components",
     "utils": "./src/utils",
     "app": "./src/app",
-    "partials": "./src/partials"
+    "partials": "./src/partials",
+    "controllers": "./src/controllers",
+    "helpers": "./src/helpers"
   },
   "dependencies": {
     "@anikin/parcel-transformer-handlebars": "^1.0.9",

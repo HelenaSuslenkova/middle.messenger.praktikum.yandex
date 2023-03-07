@@ -4,7 +4,6 @@ import { Input } from "../Input";
 
 type TextInputProps = {
   simple?: string;
-  type: string;
   alt: string;
 } & InputProps;
 export class TextInput extends Input {
