@@ -10,3 +10,4 @@ export * from "./imageMessage";
 export * from "./form";
 export * from "./button";
 export * from "./alert";
+export * from "./profileForm";

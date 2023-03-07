@@ -1,3 +1,5 @@
+import { Arrow, Button } from "components";
+import { Input } from "components/controls/Input";
 import { ComponentProps } from "./common";
 
 export type InputProps = {
@@ -24,5 +26,14 @@ export enum FormNames {
   login = 'login',
   email = 'email',
   password = 'password',
+  repeat_password='repeat_password',
   phone = 'phone',
-}
+  display_name='display_name',
+};
+
+export type FormProps = {
+  style?: string;
+  inputs: Input[];
+  button?: Arrow | Button;
+  handleSubmit: (event: Event) => void;
+} & ComponentProps;

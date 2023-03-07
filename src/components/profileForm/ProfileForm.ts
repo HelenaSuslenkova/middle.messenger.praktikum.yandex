@@ -1,8 +1,8 @@
-import { Component } from "base";
-import template from "partials/form/form.hbs";
+import { Form } from "components";
+import template from "partials/form/profileForm.hbs";
 import { FormProps } from "shared";
 
-export class Form extends Component {
+export class ProfileForm extends Form {
   constructor(props: FormProps) {
     super(props);
   }
