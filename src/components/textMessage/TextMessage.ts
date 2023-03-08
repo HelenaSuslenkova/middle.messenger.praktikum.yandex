@@ -1,11 +1,7 @@
 import { Component } from "base";
-import template from "partials/textMessage/textMessage.hbs";
 import { MessageProps } from "shared";
-
-export class TextMessage extends Component {
-  constructor(props: MessageProps) {
-    super(props);
-  }
+import template from "partials/textMessage/textMessage.hbs";
+export class TextMessage extends Component<MessageProps> {
 
   render() {
     return this.compile(template, this.props);

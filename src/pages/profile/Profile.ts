@@ -9,11 +9,7 @@ import {
 import { ListItem } from "./components";
 import template from "./profile.hbs";
 
-export class Profile extends Component {
-  constructor(props: ComponentProps) {
-    super(props);
-  }
-
+export class Profile extends Component<ComponentProps> {
   getPersonalData(): ListItem[] {
     return PersonalData.map(
       (item) =>

@@ -7,10 +7,8 @@ import template from "./registration.hbs";
 const formClass = "form";
 const buttonClass = "submit-btn";
 const linkClass = "regular500 smaller";
-export class Registration extends Component {
-  constructor(props: ComponentProps) {
-    super(props);
-  }
+
+export class Registration extends Component<ComponentProps> {
   init() {
     this.state = {
       email: {
@@ -69,18 +67,12 @@ export class Registration extends Component {
       },
     };
 
-    this.props.emailInput = new TextInput(this.state.email);
-    this.props.loginInput = new TextInput(this.state.login);
-    this.props.firstNameInput = new TextInput(this.state.first_name);
-    this.props.secondNameInput = new TextInput(this.state.second_name);
-    this.props.phoneInput = new TextInput(this.state.phone);
-    this.props.passwordInput = new TextInput(this.state.password);
-
-    this.props.submit = new Button({
-      type: "submit",
-      label: "Registration",
-      style: buttonClass,
-    });
+    this.state.emailInput = new TextInput(this.state.email);
+    this.state.loginInput = new TextInput(this.state.login);
+    this.state.firstNameInput = new TextInput(this.state.first_name);
+    this.state.secondNameInput = new TextInput(this.state.second_name);
+    this.state.phoneInput = new TextInput(this.state.phone);
+    this.state.passwordInput = new TextInput(this.state.password);
 
     this.children.link = new Link({
       label: "Login",
@@ -105,7 +97,7 @@ export class Registration extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.emailInput.setProps(this.state.email);
+              this.state.emailInput.setProps(this.state.email);
             }
             if (Object.keys(input).some((value) => value === FormNames.login)) {
               this.setState({
@@ -116,7 +108,7 @@ export class Registration extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.loginInput.setProps(this.state.login);
+              this.state.loginInput.setProps(this.state.login);
             }
             if (
               Object.keys(input).some((value) => value === FormNames.password)
@@ -129,7 +121,7 @@ export class Registration extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.passwordInput.setProps(this.state.password);
+              this.state.passwordInput.setProps(this.state.password);
             }
             if (
               Object.keys(input).some((value) => value === FormNames.first_name)
@@ -142,7 +134,7 @@ export class Registration extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.firstNameInput.setProps(this.state.first_name);
+              this.state.firstNameInput.setProps(this.state.first_name);
             }
             if (
               Object.keys(input).some(
@@ -157,7 +149,7 @@ export class Registration extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.secondNameInput.setProps(this.state.second_name);
+              this.state.secondNameInput.setProps(this.state.second_name);
             }
             if (Object.keys(input).some((value) => value === FormNames.phone)) {
               this.setState({
@@ -168,20 +160,24 @@ export class Registration extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.phoneInput.setProps(this.state.phone);
+              this.state.phoneInput.setProps(this.state.phone);
             }
           }
         });
       },
       inputs: [
-        this.props.emailInput,
-        this.props.loginInput,
-        this.props.firstNameInput,
-        this.props.secondNameInput,
-        this.props.phoneInput,
-        this.props.passwordInput,
+        this.state.emailInput,
+        this.state.loginInput,
+        this.state.firstNameInput,
+        this.state.secondNameInput,
+        this.state.phoneInput,
+        this.state.passwordInput,
       ],
-      button: this.props.submit,
+      button: new Button({
+        type: "submit",
+        label: "Registration",
+        style: buttonClass,
+      }),
     });
   }
 

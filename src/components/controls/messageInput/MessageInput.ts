@@ -1,6 +1,5 @@
 import { Input } from "../Input";
 import template from "partials/controls/messageInput.hbs";
-import { InputProps } from "shared";
 import { BaseInput } from "components";
 import { Controller } from "controllers";
 
@@ -8,10 +7,6 @@ const inputStyle = "message-input";
 const inputType = "text";
 
 export class MessageInput extends Input {
-  constructor(props: InputProps) {
-    super(props);
-  }
-
   init() {
     (this.state = {
       input: {
@@ -33,8 +28,8 @@ export class MessageInput extends Input {
 
               this.setProps({
                 ...this.props,
-                error: validationData[0]?.error,
-                alertMessage: validationData[0]?.alertMessage,
+                error: validationData[0].error,
+                alertMessage: validationData[0].alertMessage,
               });
             }
           },

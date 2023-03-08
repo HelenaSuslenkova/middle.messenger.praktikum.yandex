@@ -6,16 +6,15 @@ import template from "./dialogForm.hbs";
 
 type DialogFormProps = {
   attachIcon: URL;
+  messageInput: MessageInput;
+  attachInput: AttachInput;
+  submit: Arrow;
 } & ComponentProps;
 
 const formButtonClass = "arrow-right";
 const formClass = "chat-message-send";
 
-export class DialogForm extends Component {
-  constructor(props: DialogFormProps) {
-    super(props);
-  }
-
+export class DialogForm extends Component<DialogFormProps> {
   init() {
     this.state = {
       message: {

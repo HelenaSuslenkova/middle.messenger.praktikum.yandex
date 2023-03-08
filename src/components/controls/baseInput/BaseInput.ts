@@ -1,11 +1,7 @@
-import { Component } from "base";
 import template from "partials/controls/input.hbs";
-import { ComponentProps, InputProps } from "shared";
+import { Input } from "../Input";
 
-export class BaseInput extends Component {
-  constructor(props: InputProps & ComponentProps) {
-    super(props);
-  }
+export class BaseInput extends Input {
   init() {
     (this.props.events = {
       focus: this.props.handleFocus,

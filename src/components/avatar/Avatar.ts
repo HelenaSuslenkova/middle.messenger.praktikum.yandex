@@ -1,6 +1,6 @@
 import { Component } from "base";
-import template from "partials/avatar/avatar.hbs";
 import { ComponentProps } from "shared";
+import template from "partials/avatar/avatar.hbs";
 
 type AvatarProps = {
   alt: string;
@@ -9,11 +9,7 @@ type AvatarProps = {
   submit?: boolean;
 } & ComponentProps;
 
-export class Avatar extends Component {
-  constructor(props: AvatarProps) {
-    super(props);
-  }
-
+export class Avatar extends Component<AvatarProps> {
   render() {
     return this.compile(template, this.props);
   }

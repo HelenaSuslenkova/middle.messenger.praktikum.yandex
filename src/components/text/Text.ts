@@ -6,10 +6,7 @@ type TextProps = {
   style?: string,
 }
 
-export class Text extends Component {
-  constructor(props: TextProps) {
-    super(props);
-  }
+export class Text extends Component<TextProps> {
 
   render() {
     return this.compile(template, this.props);

@@ -1,10 +1,10 @@
 import { Component } from "base";
 import { ListHeader, Search } from "./components";
 import template from "./chatList.hbs";
-import { ChatsData } from "shared";
+import { ChatsData, ComponentProps } from "shared";
 import { Chat } from "components";
 
-export class ChatList extends Component {
+export class ChatList extends Component<ComponentProps> {
   getData(): Chat[] {
     return ChatsData.map((chat) => new Chat({
       ...chat,

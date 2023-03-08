@@ -1,8 +1,8 @@
 import { Component } from "base";
-import { attachIcon } from "shared";
+import { attachIcon, ComponentProps } from "shared";
 import { DialogHeader, MainContent, DialogForm } from "./components";
 import template from "./dialog.hbs";
-export class Dialog extends Component {
+export class Dialog extends Component<ComponentProps> {
   init() {
     this.children.dialogHeader = new DialogHeader();
     this.children.mainContent = new MainContent();

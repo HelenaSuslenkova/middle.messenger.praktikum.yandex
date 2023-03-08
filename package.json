@@ -6,7 +6,10 @@
     "dev": "parcel index.html --no-cache --open",
     "start": "parcel build index.html && node ./server.js",
     "build": "parcel build index.html",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . -- --fix",
+    "lint:css": "stylelint src/**/*.pcss"
   },
   "keywords": [],
   "author": "",

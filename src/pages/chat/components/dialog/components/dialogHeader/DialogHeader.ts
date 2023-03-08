@@ -1,11 +1,11 @@
 import { Component } from "base";
 import { Chat, Dots, Menu } from "components";
-import { CurrentChatData, menuProfile } from "shared";
+import { ComponentProps, CurrentChatData, menuProfile } from "shared";
 import template from "./dialogHeader.hbs";
 
 const CurrentChatClass = "chat-name-padding";
 
-export class DialogHeader extends Component {
+export class DialogHeader extends Component<ComponentProps> {
   getData(): Chat {
     return new Chat({...CurrentChatData, styleName: CurrentChatClass});
   };

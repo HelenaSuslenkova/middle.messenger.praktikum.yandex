@@ -1,19 +1,20 @@
 import EventBus from "../event-bus/EventBus";
 import { nanoid } from "nanoid";
-export default class Component {
+
+export default abstract class Component<Props extends Record<string, any> = {}> {
   static EVENTS = {
     INIT: "init",
     FLOW_CDM: "flow:component-did-mount",
     FLOW_CDU: "flow:component-did-update",
     FLOW_RENDER: "flow:render",
-  };
+  } as const;
 
   private _eventBus: () => EventBus;
   private _element: HTMLElement | null = null;
-  _meta: { props: any };
-  protected props: any;
+  _meta: { props: Record<string, any> };
+  protected props: Props;
   public id = nanoid(6);
-  public children: Record<string, Component | Component[]>;
+  public children: Record<string, Component<any> | Component<any>[]>;
   protected state: any = {};
 
   constructor(propsWithChildren: any = {}) {
@@ -21,7 +22,7 @@ export default class Component {
 
     const { props, children } = this.getChildrenAndProps(propsWithChildren);
 
-    this.getStateFromProps(props)
+    this.getStateFromProps(props);
     this._meta = { props };
 
     this.children = children;
@@ -41,7 +42,7 @@ export default class Component {
 
   private getChildrenAndProps(childrenAndProps: any) {
     const props: Record<string, any> = {};
-    const children: Record<string, Component | Component[]> = {};
+    const children: Record<string, Component<Props> | Component<Props>[]> = {};
 
     Object.entries(childrenAndProps).forEach(([key, value]) => {
       if (
@@ -60,12 +61,24 @@ export default class Component {
   }
 
   private addEvents() {
-    const { events = {} } = this.props as {
-      events: Record<string, () => void>;
-    };
+    const { events = {} } = this.props;
 
     Object.keys(events).forEach((eventName) => {
       this._element?.addEventListener(eventName, events[eventName]);
+    });
+  }
+
+  private removeEvents() {
+    const events: Record<string, ((event: Event) => void)> = (this.props as Props).events;
+
+    if (!events || !this._element) {
+      return;
+    }
+
+    Object.entries(events).forEach(([event, listener]) => {
+      if (this._element) {
+        this._element.removeEventListener(event, listener);
+      }
     });
   }
 
@@ -102,17 +115,18 @@ export default class Component {
     });
   }
 
-  private _componentDidUpdate(oldProps?: any, newProps?: any) {
+  private _componentDidUpdate(oldProps?: Props, newProps?: Props) {
     if (this.componentDidUpdate(oldProps, newProps)) {
       this._eventBus().emit(Component.EVENTS.FLOW_RENDER);
     }
   }
 
-  protected componentDidUpdate(_oldProps: any, _newProps: any) {
+  protected componentDidUpdate(_oldProps?: Props, _newProps?: Props) {
     return true;
   }
 
   private _render() {
+    this.removeEvents();
     const fragment = this.render();
     const element = fragment.firstElementChild as HTMLElement;
 
@@ -199,7 +213,7 @@ export default class Component {
     return temp.content;
   }
 
-  setProps = (nextProps: any) => {
+  setProps = (nextProps: Props) => {
     if (!nextProps) {
       return;
     }

@@ -1,8 +1,9 @@
 import { Component } from "base";
 import { Link } from "components";
+import { ComponentProps } from "shared";
 import template from "./listHeader.hbs";
 
-export class ListHeader extends Component {
+export class ListHeader extends Component<ComponentProps> {
   init() {
     this.children.link = new Link({
       label: "Profile >",

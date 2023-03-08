@@ -7,10 +7,7 @@ import template from "./signin.hbs";
 const formClass = "form";
 const buttonClass = "submit-btn";
 const linkClass = "regular500 smaller";
-export class SignIn extends Component {
-  constructor(props: ComponentProps) {
-    super(props);
-  }
+export class SignIn extends Component<ComponentProps> {
   init() {
     this.state = {
       login: {
@@ -33,14 +30,8 @@ export class SignIn extends Component {
       },
     };
 
-    this.props.loginInput = new TextInput(this.state.login);
-    this.props.passwordInput = new TextInput(this.state.password);
-
-    this.props.submit = new Button({
-      type: "submit",
-      label: "Sign In",
-      style: buttonClass,
-    });
+    this.state.loginInput = new TextInput(this.state.login);
+    this.state.passwordInput = new TextInput(this.state.password);
 
     this.children.link = new Link({
       label: "Don't have an account?",
@@ -65,7 +56,7 @@ export class SignIn extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.loginInput.setProps(this.state.login);
+              this.state.loginInput.setProps(this.state.login);
             }
             if (
               Object.keys(input).some((value) => value === FormNames.password)
@@ -78,13 +69,17 @@ export class SignIn extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.passwordInput.setProps(this.state.password);
+              this.state.passwordInput.setProps(this.state.password);
             }
           }
         });
       },
-      inputs: [this.props.loginInput, this.props.passwordInput],
-      button: this.props.submit,
+      inputs: [this.state.loginInput, this.state.passwordInput],
+      button: new Button({
+        type: "submit",
+        label: "Sign In",
+        style: buttonClass,
+      }),
     });
   }
 

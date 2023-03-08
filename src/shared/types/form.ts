@@ -10,12 +10,13 @@ export type InputProps = {
   autofocus?: string;
   wrapperStyle?: string;
   inputStyle?: string;
-  error?: string;
+  error?: string | false;
   alertStyle?: string;
-  alertMessage?: string;
+  alertMessage?: string | false;
   required?: string,
-  handleFocus?: (event: Event) => void;
-  handleBlur?: (event: Event) => void;
+  alt?: string;
+  handleFocus: (event: Event) => void;
+  handleBlur: (event: Event) => void;
 } & ComponentProps;
 
 export enum FormNames {
@@ -33,7 +34,7 @@ export enum FormNames {
 
 export type FormProps = {
   style?: string;
-  inputs: Input[];
+  inputs: Input<Record<string, any>>[];
   button?: Arrow | Button;
   handleSubmit: (event: Event) => void;
 } & ComponentProps;

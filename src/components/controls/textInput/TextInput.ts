@@ -10,11 +10,7 @@ type TextInputProps = {
 } & InputProps;
 
 const inputClass = "input text-input";
-export class TextInput extends Input {
-  constructor(props: TextInputProps) {
-    super(props);
-  }
-
+export class TextInput extends Input<TextInputProps> {
   init() {
     (this.state = {
       input: {

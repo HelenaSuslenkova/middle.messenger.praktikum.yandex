@@ -7,10 +7,7 @@ type LinkProps = {
   style?: string;
 } & ComponentProps;
 
-export class Link extends Component {
-  constructor(props: LinkProps) {
-    super(props);
-  }
+export class Link extends Component<LinkProps> {
   render() {
     return this.compile(template, this.props);
   }

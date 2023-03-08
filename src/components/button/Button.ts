@@ -1,6 +1,6 @@
 import { Component } from "base";
-import template from "partials/button/button.hbs";
 import { ComponentProps } from "shared";
+import template from "partials/button/button.hbs";
 
 type ButtonProps = {
   type: string;
@@ -8,10 +8,7 @@ type ButtonProps = {
   style?: string;
 } & ComponentProps;
 
-export class Button extends Component {
-  constructor(props: ButtonProps) {
-    super(props);
-  }
+export class Button extends Component<ButtonProps> {
   render() {
     return this.compile(template, this.props);
   }

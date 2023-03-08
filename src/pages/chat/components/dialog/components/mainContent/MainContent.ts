@@ -1,9 +1,9 @@
 import { Component } from "base";
 import { ImageMessage, TextMessage } from "components";
-import { Messages } from "shared";
+import { ComponentProps, Messages } from "shared";
 import template from "./mainContent.hbs";
 
-export class MainContent extends Component {
+export class MainContent extends Component<ComponentProps> {
   getData(): TextMessage | ImageMessage[] {
     return Messages.map((message) =>
       message?.content

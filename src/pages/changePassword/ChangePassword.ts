@@ -7,11 +7,7 @@ import template from "../profile/changeData.hbs";
 const formClass = "form";
 const buttonClass = "submit-btn";
 
-export class ChangePassword extends Component {
-  constructor(props: ComponentProps) {
-    super(props);
-  }
-
+export class ChangePassword extends Component<ComponentProps> {
   init() {
     this.state = {
       password: {
@@ -32,23 +28,18 @@ export class ChangePassword extends Component {
       },
     };
 
-    this.props.avatar = new Avatar({
+    this.state.avatar = new Avatar({
       src: defaultImage,
       alt: "Helena",
       submit: true,
       style: "full-size",
     });
-    this.props.passwordInput = new TextInput(this.state.password);
-    this.props.repeatPasswordInput = new TextInput(this.state.repeat_password);
-    this.props.submit = new Button({
-      type: "submit",
-      label: "Save",
-      style: buttonClass,
-    });
+    this.state.passwordInput = new TextInput(this.state.password);
+    this.state.repeatPasswordInput = new TextInput(this.state.repeat_password);
 
     this.children.avatar = new Form({
       handleSubmit: (_event: Event) => {},
-      inputs: [this.props.avatar],
+      inputs: [this.state.avatar],
     });
     this.children.form = new ProfileForm({
       style: formClass,
@@ -71,7 +62,7 @@ export class ChangePassword extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.passwordInput.setProps(this.state.password);
+              this.state.passwordInput.setProps(this.state.password);
             }
             if (
               Object.keys(input).some(
@@ -86,15 +77,19 @@ export class ChangePassword extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.repeatPasswordInput.setProps(
+              this.state.repeatPasswordInput.setProps(
                 this.state.repeat_password
               );
             }
           }
         });
       },
-      inputs: [this.props.passwordInput, this.props.repeatPasswordInput],
-      button: this.props.submit,
+      inputs: [this.state.passwordInput, this.state.repeatPasswordInput],
+      button: new Button({
+        type: "submit",
+        label: "Save",
+        style: buttonClass,
+      }),
     });
   }
 

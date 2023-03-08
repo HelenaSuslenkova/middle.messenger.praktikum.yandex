@@ -1,3 +1,3 @@
 export type ComponentProps = {
-    events?: Record<string, () => void>;
+    events?: Record<string, (event: Event) => void>;
 }

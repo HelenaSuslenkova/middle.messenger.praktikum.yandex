@@ -7,11 +7,7 @@ import template from "../profile/changeData.hbs";
 const formClass = "form";
 const buttonClass = "submit-btn";
 
-export class ChangePersonalData extends Component {
-  constructor(props: ComponentProps) {
-    super(props);
-  }
-
+export class ChangePersonalData extends Component<ComponentProps> {
   init() {
     this.state = {
       email: {
@@ -70,28 +66,23 @@ export class ChangePersonalData extends Component {
       },
     };
 
-    this.props.emailInput = new TextInput(this.state.email);
-    this.props.loginInput = new TextInput(this.state.login);
-    this.props.firstNameInput = new TextInput(this.state.first_name);
-    this.props.secondNameInput = new TextInput(this.state.second_name);
-    this.props.phoneInput = new TextInput(this.state.phone);
-    this.props.displayNameInput = new TextInput(this.state.display_name);
+    this.state.emailInput = new TextInput(this.state.email);
+    this.state.loginInput = new TextInput(this.state.login);
+    this.state.firstNameInput = new TextInput(this.state.first_name);
+    this.state.secondNameInput = new TextInput(this.state.second_name);
+    this.state.phoneInput = new TextInput(this.state.phone);
+    this.state.displayNameInput = new TextInput(this.state.display_name);
 
-    this.props.avatar = new Avatar({
+    this.state.avatar = new Avatar({
       src: defaultImage,
       alt: "Helena",
       submit: true,
       style: "full-size",
     });
-    this.props.submit = new Button({
-      type: "submit",
-      label: "Save",
-      style: buttonClass,
-    });
 
     this.children.avatar = new Form({
       handleSubmit: (_event: Event) => {},
-      inputs: [this.props.avatar],
+      inputs: [this.state.avatar],
     });
     this.children.form = new ProfileForm({
       style: formClass,
@@ -112,7 +103,7 @@ export class ChangePersonalData extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.emailInput.setProps(this.state.email);
+              this.state.emailInput.setProps(this.state.email);
             }
             if (Object.keys(input).some((value) => value === FormNames.login)) {
               this.setState({
@@ -123,7 +114,7 @@ export class ChangePersonalData extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.loginInput.setProps(this.state.login);
+              this.state.loginInput.setProps(this.state.login);
             }
             if (
               Object.keys(input).some((value) => value === FormNames.password)
@@ -136,7 +127,7 @@ export class ChangePersonalData extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.passwordInput.setProps(this.state.password);
+              this.state.passwordInput.setProps(this.state.password);
             }
             if (
               Object.keys(input).some((value) => value === FormNames.first_name)
@@ -149,7 +140,7 @@ export class ChangePersonalData extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.firstNameInput.setProps(this.state.first_name);
+              this.state.firstNameInput.setProps(this.state.first_name);
             }
             if (
               Object.keys(input).some(
@@ -164,7 +155,7 @@ export class ChangePersonalData extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.secondNameInput.setProps(this.state.second_name);
+              this.state.secondNameInput.setProps(this.state.second_name);
             }
             if (Object.keys(input).some((value) => value === FormNames.phone)) {
               this.setState({
@@ -175,7 +166,7 @@ export class ChangePersonalData extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.phoneInput.setProps(this.state.phone);
+              this.state.phoneInput.setProps(this.state.phone);
             }
             if (
               Object.keys(input).some(
@@ -190,20 +181,24 @@ export class ChangePersonalData extends Component {
                   alertMessage: input.alertMessage,
                 },
               });
-              this.props.displayNameInput.setProps(this.state.display_name);
+              this.state.displayNameInput.setProps(this.state.display_name);
             }
           }
         });
       },
       inputs: [
-        this.props.emailInput,
-        this.props.loginInput,
-        this.props.firstNameInput,
-        this.props.secondNameInput,
-        this.props.phoneInput,
-        this.props.displayNameInput,
+        this.state.emailInput,
+        this.state.loginInput,
+        this.state.firstNameInput,
+        this.state.secondNameInput,
+        this.state.phoneInput,
+        this.state.displayNameInput,
       ],
-      button: this.props.submit,
+      button: new Button({
+        type: "submit",
+        label: "Save",
+        style: buttonClass,
+      }),
     });
   }
 

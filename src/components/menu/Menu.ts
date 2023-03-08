@@ -6,10 +6,9 @@ type MenuProps = {
   data: typeof menuProfile,
 } & ComponentProps;
 
-export class Menu extends Component {
-  constructor(props: MenuProps) {
-    props.data = menuProfile;
-    super(props);
+export class Menu extends Component<MenuProps> {
+  init() {
+    this.props.data = menuProfile;
   }
 
   render() {
