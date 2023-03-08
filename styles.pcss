@@ -1,37 +1,38 @@
-@import "/src/app/app/app.pcss";
-@import "/src/partials/index.pcss";
-@import "/src/pages/index.pcss";
+@import url("/src/app/app/app.pcss");
+@import url("/src/partials/index.pcss");
+@import url("/src/pages/index.pcss");
 
 :root {
-  --white: #ffffff;
-  --blue15: #E4EDFD;
+  --white: #fff;
+  --blue15: #e4edfd;
   --blue1: #3369f3be;
-  --blue2: #3369F3;
-  --grey0: #FBFBFB;
-  --grey1: #EFEFEF;
-  --grey15: #EAEAEA;
-  --grey2: #999999;
-  --grey25: #8D8D8D;
-  --grey3: #1E1E1E;
-  --grey35: #F8F8F8;
+  --blue2: #3369f3;
+  --grey0: #fbfbfb;
+  --grey1: #efefef;
+  --grey15: #eaeaea;
+  --grey2: #999;
+  --grey25: #8d8d8d;
+  --grey3: #1e1e1e;
+  --grey35: #f8f8f8;
   --grey4: #52525280;
-  --grey45: #F5F5F5;
-  --red1: #FF2F2F;
-  --red2: #ff0000bb;
-  --red3: #FF0000;
-
-  --modal-background: rgba(0, 0, 0, .4);
+  --grey45: #f5f5f5;
+  --red1: #ff2f2f;
+  --red2: #f00b;
+  --red3: #f00;
+  --modal-background: rgb(0 0 0 / 40%);
+  --box-shadow: 0 0 6px rgb(0 0 0 / 14%);
 }
 
-body * {
+body{
   color: var(--grey3);
-  font-family: 'Inter';
+  font-family: Inter, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
   line-height: 15px;
 }
 
+/* stylelint-disable-next-line selector-pseudo-element-colon-notation */
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;

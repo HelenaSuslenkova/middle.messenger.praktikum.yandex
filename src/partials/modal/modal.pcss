@@ -9,7 +9,7 @@
 
 .modal {
   background-color: var(--white);
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+  box-shadow: var(--box-shadow);
   border-radius: 12px;
   width: 340px;
   min-height: 248px;
@@ -73,7 +73,8 @@
   font-size: 12px;
   line-height: 16px;
 }
-.modal-input-file[type=file] {
+
+.modal-input-file[type="file"] {
   position: absolute;
   z-index: -1;
   opacity: 0;

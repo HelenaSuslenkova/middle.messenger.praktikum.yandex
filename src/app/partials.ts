@@ -18,7 +18,6 @@ import dotsPartial from "../partials/dots/dots.hbs";
 import checkMarkPartial from "../partials/checkMark/checkMark.hbs";
 import menuPartial from "../partials/menu/menu.hbs";
 import formPartial from "../partials/form/form.hbs";
-import alertPartial from "../partials/alert/alert.hbs";
 import inputPartial from "../partials/controls/input.hbs";
 
 Handlebars.registerPartial("link", linkPartial);
@@ -39,5 +38,4 @@ Handlebars.registerPartial("dots", dotsPartial);
 Handlebars.registerPartial("checkMark", checkMarkPartial);
 Handlebars.registerPartial("menu", menuPartial);
 Handlebars.registerPartial("form", formPartial);
-Handlebars.registerPartial("alert", alertPartial);
 Handlebars.registerPartial("input", inputPartial);

@@ -28,13 +28,13 @@ input.input[required]:not([simple]) + label.input-label[placeholder] {
   margin-top: calc(-1.5em - 2px);
 }
 
-input.input[required]:not([simple]) + label.input-label[placeholder]:before {
+input.input[required]:not([simple]) + label.input-label[placeholder]::before {
   content: attr(placeholder);
   display: inline-block;
 }
 
-input.input[required]:not([simple]):focus + label.input-label[placeholder]:before,
-input.input[required]:not([simple]):valid + label.input-label[placeholder]:before {
+input.input[required]:not([simple]):focus + label.input-label[placeholder]::before,
+input.input[required]:not([simple]):valid + label.input-label[placeholder]::before {
   transition-duration: .2s;
   transform: translate(0, -1.5em) scale(0.9, 0.9);
 }
@@ -43,7 +43,7 @@ input.input[simple]:focus {
   border-bottom: 1px solid var(--blue1);;
 }
 
-input.input[required]:not([simple]):invalid + label.input-label[placeholder][alt]:before {
+input.input[required]:not([simple]):invalid + label.input-label[placeholder][alt]::before {
   content: attr(alt);
 }
 
@@ -53,14 +53,15 @@ input.input[required]:not([simple]):invalid + label.input-label[placeholder][alt
   width: 100%;
 }
 
-.input-control:not([simple]):not(:last-of-type) {
+.input-control:not([simple]) :not(:last-of-type) {
   margin-bottom: 0.875rem;
 }
 
 .message-alert {
   margin-top: 0.5rem;
   display: none;
-    &.error {
-      display: block;
-    }
+
+  &.error {
+    display: block;
+  }
 }
