@@ -144,3 +144,69 @@ export const ChatsData: ChatProps[] = [
     count: "2",
   },
 ];
+
+export const NavigationData = [
+  {
+    label: "Change personal data",
+    style: "regular500 small",
+  },
+  {
+    label: "Change password",
+    style: "regular500 small",
+  },
+  {
+    label: "Logout",
+    style: "alert-link regular500 small",
+  },
+];
+
+export const PersonalData = [
+  {
+    itemKey: {
+      content: "Email",
+    },
+    itemValue: {
+      content: "pochta@yandex.ru",
+    },
+  },
+  {
+    itemKey: {
+      content: "Login",
+    },
+    itemValue: {
+      content: "ivanivanov",
+    },
+  },
+  {
+    itemKey: {
+      content: "Name",
+    },
+    itemValue: {
+      content: "Ivan",
+    },
+  },
+  {
+    itemKey: {
+      content: "Surname",
+    },
+    itemValue: {
+      content: "Ivanov",
+    },
+  },
+  {
+    itemKey: {
+      content: "Chat name",
+    },
+    itemValue: {
+      content: "Ivan",
+    },
+  },
+  {
+    itemKey: {
+      content: "Telephone",
+    },
+    itemValue: {
+      content: "+7 (909) 967 30 30",
+    },
+  },
+];
