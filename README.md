@@ -1,6 +1,10 @@
 ## Messenger - самостоятельный проект курса "Middle frontend разработчик"
 
+### Технологии:
+- typescript
 
+### Проектирование:
+- компонентный подход, MVC
 ### Ссылка на макет:
 
 [Макет в "Figma"](https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?node-id=0%3A1&t=W9aQWcPCdRtAFgHG-0)

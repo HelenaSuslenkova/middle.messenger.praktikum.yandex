@@ -1,11 +1,7 @@
 <div class="message-input-control {{wrapperStyle}}">
-  <input
-    class="input message-input {{inputStyle}}"
-    value="{{value}}"
-    type="text"
-    id={{inputId}}
-    name={{inputId}}
-    placeholder={{placeholder}}
-    {{autofocus}}
-  />
+  {{{input}}}
+  <div
+    {{simple}}
+    class="message-alert most-small red1 {{error}} {{alertStyle}}"
+  >{{alertMessage}}</div>
 </div>

@@ -5,12 +5,28 @@
   "scripts": {
     "dev": "parcel index.html --no-cache --open",
     "start": "parcel build index.html && node ./server.js",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . -- --fix",
+    "lint:css": "stylelint src/**/*.pcss"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "peerDependencies": {},
+  "alias": {
+    "base": "./src/base",
+    "shared": "./src/shared",
+    "pages": "./src/pages",
+    "components": "./src/components",
+    "utils": "./src/utils",
+    "app": "./src/app",
+    "partials": "./src/partials",
+    "helpers": "./src/helpers",
+    "services": "./src/services",
+    "controllers": "./src/controllers"
+  },
   "dependencies": {
     "@anikin/parcel-transformer-handlebars": "^1.0.9",
     "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
@@ -23,12 +39,19 @@
     "postcss-import": "^15.1.0"
   },
   "devDependencies": {
+    "@types/node": "^18.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
     "buffer": "^5.5.0",
+    "eslint": "^8.34.0",
     "path-browserify": "^1.0.0",
     "postcss": "^8.0.0",
     "postcss-custom-properties": "^13.1.1",
     "postcss-nesting": "^11.1.0",
     "postcss-url": "^10.1.3",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard": "^30.0.1",
+    "typescript": "^4.9.5"
   }
 }

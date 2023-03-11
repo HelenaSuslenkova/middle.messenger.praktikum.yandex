@@ -1,31 +1,12 @@
-{{!-- {{!< base/base}} --}}
 <div class="container">
   <div class="inner-container">
     <div class="paper">
-      <form class="form">
-        <div class="form-title center">
+      <div class="form-title center">
           {{> text content="Registration" style="regular500 medium"}}
         </div>
-        {{> textInput type="email" placeholder="Email" alt="Email" inputId="email" alertMessage="Invalid email"}}
-
-        {{> textInput type="text" placeholder="Login" alt="Login" inputId="login" alertMessage="Invalid login"}}
-
-        {{> textInput type="text" placeholder="Name" alt="Name" inputId="first_name" alertMessage="Invalid name"}}
-
-        {{> textInput type="text" placeholder="Surname" alt="Surname" inputId="second_name" alertMessage="Invalid surname"}}
-
-        {{> textInput type="tel" placeholder="Telephone" alt="Telephone" inputId="phone" alertMessage="Invalid telephone"}}
-
-        {{> textInput type="password" placeholder="Password" alt="Password" inputId="password" alertMessage="Invalid password" isVisible="visible"}}
-
-        {{> textInput type="password" placeholder="Password" alt="Password" inputId="password" alertMessage="Invalid password" isVisible="visible"}}
-
-        <div class="form-actions-wrapper">
-          {{> button type="submit" label="Registration" style="submit-btn"}}
-        </div>
-      </form>
+      {{{form}}}
       <div class="links-wrapper">
-        {{> link label="Login" style="regular500 smaller"}}
+        {{{link}}}
       </div>
     </div>
   </div>

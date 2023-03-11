@@ -1,0 +1,12 @@
+<div class="left-wrapper">
+  {{{listHeader}}}
+  {{{search}}}
+  <div class="chats-left-col">
+    {{#each chatItems}}
+      <div class="chat-wrapper">
+        {{> divider}}
+        {{{this}}}
+      </div>
+    {{/each}}
+  </div>
+</div>

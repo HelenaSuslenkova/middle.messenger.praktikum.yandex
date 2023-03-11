@@ -1,0 +1,27 @@
+.dot {
+  background-color: var(--grey3);
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+
+.menu-dots {
+  display: flex;
+  flex-direction: column;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 15px 17px 17px;
+
+    &:hover {
+      background-color: var(--grey45);
+
+      .dot {
+        background: var(--blue2);
+      }
+    }
+}

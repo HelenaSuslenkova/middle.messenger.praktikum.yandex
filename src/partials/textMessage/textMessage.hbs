@@ -1,13 +1,15 @@
-<div {{right}} class="text-message {{styleWrapper}}">
-  <div class="text-block">
-    <span class="regular500 small1215 pre-wrap {{styleText}}">{{content}}</span>
+{{#if content}}
+  <div {{right}} class="text-message {{styleWrapper}}">
+    <div class="text-block">
+      <span class="regular500 small1215 pre-wrap {{styleText}}">{{content}}</span>
+    </div>
+    <div class="info-block">
+      {{#if doubleCheck}}
+        {{> checkMark doubleCheck="visible"}}
+      {{else}}
+        {{> checkMark}}
+      {{/if}}
+      <div class="message-time small9 grey2 right" {{doubleCheck}}>{{time}}</div>
+    </div>
   </div>
-  <div class="info-block">
-    {{#if doubleCheck}}
-    {{> checkMark doubleCheck="visible"}}
-    {{else}}
-    {{> checkMark}}
-    {{/if}}
-    <div class="message-time small9 grey2 right" {{doubleCheck}}>{{time}}</div>
-  </div>
-</div>
+{{/if}}
